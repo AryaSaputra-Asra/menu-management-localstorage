@@ -6,30 +6,24 @@ const UI = {
     this.list.innerHTML = "";
 
     menus.forEach((menu, index) => {
-      this.list.innerHTML += `
-        <div class="flex justify-between items-center border p-3 rounded bg-slate-50 hover:shadow transition">
-          <div>
-            <p class="font-semibold">${menu.name}</p>
-            <p class="text-sm text-gray-500">
-              Rp ${menu.price} • ${menu.category}
-            </p>
-          </div>
-          <div class="space-x-3">
-            <button
-              onclick="editMenu(${index})"
-              class="text-yellow-600 hover:underline"
-            >
-              Edit
-            </button>
-            <button
-              onclick="deleteMenu(${index})"
-              class="text-red-600 hover:underline"
-            >
-              Hapus
-            </button>
+      const item = document.createElement("div");
+      item.className =
+        "flex justify-between items-center border rounded p-3 bg-slate-50";
+
+      item.innerHTML = `
+        <div>
+          <div class="font-semibold">${menu.name}</div>
+          <div class="text-sm text-gray-500">
+            Rp ${menu.price} • ${menu.category}
           </div>
         </div>
+        <div class="space-x-2">
+          <button class="text-yellow-600" onclick="editMenu(${index})">Edit</button>
+          <button class="text-red-600" onclick="deleteMenu(${index})">Hapus</button>
+        </div>
       `;
+
+      this.list.appendChild(item);
     });
 
     this.total.textContent = menus.length;

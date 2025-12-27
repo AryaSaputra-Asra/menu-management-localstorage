@@ -6,13 +6,13 @@ const form = document.getElementById("menuForm");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const newMenu = {
-    name: name.value.trim(),
-    price: price.value,
-    category: category.value
-  };
+  const name = document.getElementById("name").value.trim();
+  const price = document.getElementById("price").value;
+  const category = document.getElementById("category").value;
 
-  menus.push(newMenu);
+  if (!name || !price) return;
+
+  menus.push({ name, price, category });
   Storage.save(menus);
   UI.render(menus);
   form.reset();
@@ -27,17 +27,12 @@ function deleteMenu(index) {
 function editMenu(index) {
   const menu = menus[index];
 
-  const newName = prompt("Nama Menu:", menu.name);
-  const newPrice = prompt("Harga:", menu.price);
-  const newCategory = prompt("Kategori:", menu.category);
+  const name = prompt("Nama Menu:", menu.name);
+  const price = prompt("Harga:", menu.price);
+  const category = prompt("Kategori:", menu.category);
 
-  if (newName && newPrice && newCategory) {
-    menus[index] = {
-      name: newName,
-      price: newPrice,
-      category: newCategory
-    };
-
+  if (name && price && category) {
+    menus[index] = { name, price, category };
     Storage.save(menus);
     UI.render(menus);
   }
