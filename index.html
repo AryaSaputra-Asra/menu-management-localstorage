@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistem Manajemen Menu Makanan</title>
+
+  <!-- Tailwind CDN + Custom Theme -->
+  <script>
+    tailwind = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f766e',
+            accent: '#14b8a6'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="bg-slate-100 min-h-screen p-6">
+
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow p-6">
+    <h1 class="text-2xl font-bold text-primary mb-4">
+      Sistem Manajemen Menu Makanan
+    </h1>
+
+    <!-- Form Tambah Menu -->
+    <form id="menuForm" class="grid md:grid-cols-4 gap-3 mb-4">
+      <input
+        id="name"
+        type="text"
+        placeholder="Nama Menu"
+        required
+        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+      />
+
+      <input
+        id="price"
+        type="number"
+        placeholder="Harga"
+        required
+        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+      />
+
+      <select
+        id="category"
+        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+      >
+        <option>Makanan</option>
+        <option>Minuman</option>
+        <option>Snack</option>
+      </select>
+
+      <button
+        type="submit"
+        class="bg-primary text-white rounded px-4 py-2 hover:bg-accent transition"
+      >
+        Tambah
+      </button>
+    </form>
+
+    <p class="text-sm text-gray-600 mb-2">
+      Total Menu:
+      <span id="totalMenu" class="font-bold">0</span>
+    </p>
+
+    <!-- List Menu -->
+    <div id="menuList" class="space-y-2"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
