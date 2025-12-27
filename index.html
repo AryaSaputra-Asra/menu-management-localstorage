@@ -7,7 +7,7 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 min-h-screen flex items-start justify-center p-6">
+<body class="bg-slate-100 min-h-screen flex justify-center p-6">
 
   <div class="w-full max-w-2xl bg-white rounded-xl shadow p-6">
     <h1 class="text-2xl font-bold mb-1">
@@ -17,15 +17,14 @@
       Aplikasi CRUD menu makanan berbasis Local Storage
     </p>
 
-    <!-- FORM (TANPA GRID RIBET) -->
+    <!-- FORM -->
     <form id="menuForm" class="space-y-3 mb-4">
-
       <input
         id="name"
         type="text"
         placeholder="Nama Menu"
         required
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
       />
 
       <input
@@ -33,30 +32,32 @@
         type="number"
         placeholder="Harga"
         required
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
       />
 
       <select
         id="category"
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
       >
         <option>Makanan</option>
         <option>Minuman</option>
         <option>Snack</option>
       </select>
 
-      <!-- TOMBOL (PASTI MUNCUL) -->
       <button
         type="submit"
         class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"
       >
         Tambah Menu
       </button>
-
     </form>
 
-    <p class="text-sm text-gray-600 mb-2">
+    <!-- INFO -->
+    <p class="text-sm text-gray-600">
       Total Menu: <span id="totalMenu" class="font-bold">0</span>
+    </p>
+    <p class="text-sm text-gray-600 mb-4">
+      Total Harga: <span id="totalPrice" class="font-bold">Rp 0</span>
     </p>
 
     <!-- LIST -->

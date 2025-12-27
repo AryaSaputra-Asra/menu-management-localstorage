@@ -7,10 +7,10 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
-  const price = document.getElementById("price").value;
+  const price = Number(document.getElementById("price").value);
   const category = document.getElementById("category").value;
 
-  if (!name || !price) return;
+  if (!name || price <= 0) return;
 
   menus.push({ name, price, category });
   Storage.save(menus);
@@ -24,16 +24,9 @@ function deleteMenu(index) {
   UI.render(menus);
 }
 
-function editMenu(index) {
-  const menu = menus[index];
-
-  const name = prompt("Nama Menu:", menu.name);
-  const price = prompt("Harga:", menu.price);
-  const category = prompt("Kategori:", menu.category);
-
-  if (name && price && category) {
-    menus[index] = { name, price, category };
-    Storage.save(menus);
-    UI.render(menus);
-  }
+// EDIT INLINE
+function updateMenu(index, key, value) {
+  menus[index][key] = key === "price" ? Number(value) : value;
+  Storage.save(menus);
+  UI.render(menus);
 }
