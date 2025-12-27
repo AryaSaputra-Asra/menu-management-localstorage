@@ -27,12 +27,15 @@
     <h1 class="text-2xl font-bold text-primary mb-1">
       Sistem Manajemen Menu Makanan
     </h1>
-    <p class="text-sm text-gray-500 mb-4">
+    <p class="text-sm text-gray-500 mb-6">
       Aplikasi CRUD menu makanan berbasis Local Storage
     </p>
 
-    <!-- Form -->
-    <form id="menuForm" class="grid md:grid-cols-4 gap-3 mb-4">
+    <!-- FORM -->
+    <form
+      id="menuForm"
+      class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4"
+    >
       <input
         id="name"
         type="text"
@@ -58,11 +61,12 @@
         <option>Snack</option>
       </select>
 
+      <!-- TOMBOL -->
       <button
         type="submit"
-        class="bg-primary text-white rounded px-4 py-2 hover:bg-accent transition font-semibold"
+        class="md:col-span-3 bg-primary text-white rounded px-4 py-2 hover:bg-accent transition font-semibold"
       >
-        Tambah
+        Tambah Menu
       </button>
     </form>
 
@@ -71,10 +75,11 @@
       <span id="totalMenu" class="font-bold">0</span>
     </p>
 
-    <!-- List -->
+    <!-- LIST -->
     <div id="menuList" class="space-y-2"></div>
   </div>
 
+  <!-- JS -->
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/app.js"></script>
