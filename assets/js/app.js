@@ -7,7 +7,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const newMenu = {
-    name: name.value,
+    name: name.value.trim(),
     price: price.value,
     category: category.value
   };

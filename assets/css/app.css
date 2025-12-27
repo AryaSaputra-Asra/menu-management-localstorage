@@ -1,3 +1,4 @@
-/* File ini sengaja minimal.
-   Styling utama menggunakan Tailwind CDN di HTML
-   agar tidak membutuhkan build system */
+/* 
+  Styling utama menggunakan Tailwind CDN langsung di HTML.
+  File ini disiapkan untuk pengembangan lanjutan jika diperlukan.
+*/

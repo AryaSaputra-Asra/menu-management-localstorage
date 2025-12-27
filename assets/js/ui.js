@@ -7,7 +7,7 @@ const UI = {
 
     menus.forEach((menu, index) => {
       this.list.innerHTML += `
-        <div class="flex justify-between items-center border p-3 rounded">
+        <div class="flex justify-between items-center border p-3 rounded bg-slate-50 hover:shadow transition">
           <div>
             <p class="font-semibold">${menu.name}</p>
             <p class="text-sm text-gray-500">
