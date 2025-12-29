@@ -1,4 +1,15 @@
-/* 
-  Styling utama menggunakan Tailwind CDN langsung di HTML.
-  File ini disiapkan untuk pengembangan lanjutan jika diperlukan.
-*/
+/* Minimal custom styling */
+button { cursor: pointer; }
+
+/* history item utilities */
+.history-item .meta { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.history-detail { padding: .5rem 0; color: #374151; }
+.history-actions button { margin-left: .4rem; }
+
+/* small ghost button */
+.small-ghost {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
